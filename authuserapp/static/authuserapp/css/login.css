@@ -1,0 +1,51 @@
+/* body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bakemark_login_bg_mini.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -100;
+} */
+body {
+    font-family: "Libre Franklin";
+    overflow-x: hidden;
+	margin: 0;
+	display: flex;
+	height: 100vh;
+	align-items: center;
+}
+.login-container {
+    width: 50vw;
+    margin: 0 auto;
+    background: #ebebeb;
+    border-radius: 16px;
+    padding: 40px;
+}
+.logo {
+    width: 100%;
+    height: auto;
+    margin-bottom: 60px;
+}
+.errorlist {display:none;} /* don't show inline errors; errors shown in toast alert */
+label {display:none;}
+#id_user_id {
+    padding: 8px;
+    border-radius: 4px;
+    width: 100%;
+}
+.submit-btn:hover {
+    color: #fff;
+    background-color: #DD3037;
+}
+.submit-btn {
+    width: 100%;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+    background-color: #DD3037;
+    border-radius: 8px;
+    border: none;
+    padding: 16px 24px;
+}

@@ -1,0 +1,16 @@
+{% extends "authuserapp/base.html" %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'authuserapp/css/dashboard.css' %}">
+{% endblock css %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        {% comment %} hello <b>{{ request.user.username }}</b><br> {% endcomment %}
+        <a href="{% url 'authuserapp:logout' %}">Logout</a>
+    {% else %}
+        hello
+    {% endif %}
+{% endblock %}
