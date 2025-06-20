@@ -1,0 +1,26 @@
+{% extends "authuserapp/base.html" %}
+{% block content %}
+<h2>Inventory Items</h2>
+<a href="{% url 'authuserapp:inventory_add' %}" class="btn btn-success">Add Item</a>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>SKU</th><th>Price</th><th>Count</th><th>Status</th><th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.sku }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.count }}</td>
+            <td>{{ item.status }}</td>
+            <td>
+                <a href="{% url 'authuserapp:inventory_edit' item.pk %}">Edit</a> |
+                <a href="{% url 'authuserapp:inventory_delete' item.pk %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
