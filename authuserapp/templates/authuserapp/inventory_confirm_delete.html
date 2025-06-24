@@ -1,10 +1,22 @@
 {% extends "authuserapp/base.html" %}
+{% load static %}
+
 {% block content %}
-<h2>Confirm Delete</h2>
-<p>Are you sure you want to delete <strong>{{ item.sku }}</strong>?</p>
-<form method="POST">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Yes, Delete</button>
-    <a href="{% url 'authuserapp:inventory_list' %}" class="btn btn-secondary">Cancel</a>
-</form>
+<div class="container mt-5">
+    <div class="card shadow-sm p-4 text-center">
+        <h2 class="mb-4 text-danger">🗑️ Confirm Deletion</h2>
+        <p class="fs-5">
+            Are you sure you want to delete <strong class="text-dark">{{ item.sku }}</strong>?
+        </p>
+        <form method="POST" class="d-flex justify-content-center gap-3 mt-4">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-danger px-4">
+                Yes, Delete
+            </button>
+            <a href="{% url 'authuserapp:inventory_list' %}" class="btn btn-outline-secondary px-4">
+                Cancel
+            </a>
+        </form>
+    </div>
+</div>
 {% endblock %}

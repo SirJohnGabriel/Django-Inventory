@@ -6,3 +6,4 @@ tzdata==2024.1
 whitenoise==6.7.0
 pytz
 pyspnego
+pika

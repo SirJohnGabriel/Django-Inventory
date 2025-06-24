@@ -18,5 +18,17 @@ services:
             - POSTGRES_NAME=postgres
             - POSTGRES_USER=postgres
             - POSTGRES_PASSWORD=postgres
+            - RABBITMQ_HOST=rabbitmq
         depends_on:
             - db
+            - rabbitmq
+        env_file:
+            - .env
+    rabbitmq:
+        image: rabbitmq:3-management
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+        environment:
+            RABBITMQ_DEFAULT_USER: user
+            RABBITMQ_DEFAULT_PASS: pass
