@@ -1,0 +1,26 @@
+{% extends "authuserapp/base.html" %}
+{% block content %}
+<h2>Inventory</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>SKU</th>
+            <th>Price</th>
+            <th>Count</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.sku }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.count }}</td>
+            <td>{{ item.status }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

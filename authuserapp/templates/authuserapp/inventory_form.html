@@ -1,0 +1,27 @@
+{% extends "authuserapp/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-sm p-4">
+        <h2 class="mb-4 text-primary">
+            {% if form.instance.pk %} ✏️ Edit Item {% else %} ➕ Add Item {% endif %}
+        </h2>
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.as_p }}
+            </div>
+            <div class="d-flex gap-2 mt-3">
+                <button type="submit" class="btn btn-outline-primary">
+                    💾 Save
+                </button>
+                <a href="{% url 'authuserapp:inventory_list' %}" class="btn btn-outline-secondary">
+                    ⬅️ Return to Inventory
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

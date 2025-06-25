@@ -16,10 +16,23 @@
                 <h1 style="color:#2c2c2c;font-size:36px;font-weight:600;">Login</h1>
                 <form method="POST" class="mt-4">
                     {% csrf_token %}
-                    <p style="font-weight:600;font-size:16px;margin-bottom:0;">USERNAME</p>
-                    {{ form.as_p }}
+                    <!-- <p style="font-weight:600;font-size:16px;margin-bottom:0;">USERNAME</p> -->
+                     <div class="mb-3">
+                        <p style="font-weight:600;font-size:16px;margin-bottom:0;">EMAIL</p>
+                        <label for="{{ form.email.id_for_label }}">Email</label>
+                        {{ form.email }}
+                        {{ form.email.errors }}
+                    </div>
+
+                    <div class="mb-3">
+                        <p style="font-weight:600;font-size:16px;margin-bottom:0;">PASSWORD</p>
+                        <label for="{{ form.password.id_for_label }}">Password</label>
+                        {{ form.password }}
+                        {{ form.password.errors }}
+                    </div>
                     <button type="submit" class="btn btn-primary submit-btn">LOGIN</button>
                 </form>
+                <p class="mt-3">Don't have an account? <a href="{% url 'authuserapp:register' %}">Register here</a></p>
             </div>
         </div>
     </div>

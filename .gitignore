@@ -1,1 +1,37 @@
 __pycache__/
+*.py[cod]
+*.sqlite3
+
+venv/
+env/
+ENV/
+.env
+.venv/
+
+**/migrations/*.pyc
+**/migrations/__pycache__/
+
+# Uncomment the line below if you want to ignore migration files themselves:
+# **/migrations/*.py
+
+data/
+*.db
+
+media/
+uploads/
+
+.DS_Store
+Thumbs.db
+
+.vscode/
+.idea/
+
+*.pid
+*.log
+htmlcov/
+coverage.xml
+*.cover
+nosetests.xml
+test-results/
+.cache/
+staticfiles/
